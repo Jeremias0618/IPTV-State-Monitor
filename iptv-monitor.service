@@ -1,0 +1,17 @@
+[Unit]
+Description=IPTV Canal Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html/IPTV
+ExecStart=/var/www/html/IPTV/monitor_canales.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target 
